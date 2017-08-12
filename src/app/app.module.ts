@@ -1,10 +1,14 @@
-import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
+import { BrowserModule } from '@angular/platform-browser';
+import { FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
+import { AppRoutingModule } from "./app-routing.module";
 
 import { AppComponent } from './app.component';
-import { PeopleService } from './people.service';
 import { PeopleListComponent } from './people-list/people-list.component';
 import { PersonDetailsComponent } from './person-details/person-details.component';
+
+import { PeopleService } from './people.service';
 
 @NgModule({
   declarations: [
@@ -13,9 +17,13 @@ import { PersonDetailsComponent } from './person-details/person-details.componen
     PersonDetailsComponent
   ],
   imports: [
-    BrowserModule
+    BrowserModule,
+    FormsModule,
+    HttpModule,
+    AppRoutingModule
   ],
   providers: [PeopleService],
   bootstrap: [AppComponent]
 })
+
 export class AppModule { }
